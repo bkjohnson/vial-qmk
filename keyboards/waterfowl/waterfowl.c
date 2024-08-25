@@ -96,6 +96,13 @@ bool oled_task_kb(void) {
            default:
                oled_write_ln_P(PSTR("Undefined"), false);
        }
+
+       if (is_caps_word_on()) {
+            oled_write_P(PSTR("CAPS\n\n\n\n"), false);
+       }
+       else {
+            oled_write_P(PSTR("\n\n\n\n\n"), false);
+       }
     } else {
   static const char PROGMEM my_logo[] = {
     // Paste the code from the previous step below this line!
