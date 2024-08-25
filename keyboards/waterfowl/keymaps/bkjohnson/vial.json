@@ -7,6 +7,13 @@
         "rows": 8,
         "cols": 5
     },
+    "customKeycodes": [
+        {
+            "name": "Lock",
+            "title": "Layer Lock",
+            "shortName": "LLOCK"
+        }
+    ],
     "layouts": {
         "keymap":
         [

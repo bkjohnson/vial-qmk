@@ -8,3 +8,4 @@ KEY_OVERRIDE_ENABLE = no
 CAPS_WORD_ENABLE = yes
 TAP_DANCE_ENABLE = yes
 COMBO_ENABLE = no
+SRC += features/layer_lock.c
