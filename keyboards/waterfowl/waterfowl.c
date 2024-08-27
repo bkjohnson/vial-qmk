@@ -72,25 +72,28 @@ bool oled_task_kb(void) {
            case 0:
                oled_write_P(PSTR("BASE\n\n\n\n"), false);
                break;
-           case 3:
-               oled_write_P(PSTR("MEDIA\n\n\n\n"), false);
-               break;
-           case 2:
-               oled_write_P(PSTR("MOUSE\n\n\n\n"), false);
-               break;
            case 1:
-               oled_write_P(PSTR("NAV\n\n\n\n"), false);
+               oled_write_P(PSTR("EXTRA\n\n\n\n"), false);
                break;
            case 4:
-               oled_write_P(PSTR("BUTTON\n\n\n\n"), false);
+               oled_write_P(PSTR("MEDIA\n\n\n\n"), false);
+               break;
+           case 3:
+               oled_write_P(PSTR("MOUSE\n\n\n\n"), false);
+               break;
+           case 2:
+               oled_write_P(PSTR("NAV\n\n\n\n"), false);
                break;
            case 5:
-               oled_write_P(PSTR("NUM\n\n\n\n"), false);
+               oled_write_P(PSTR("BUTTON\n\n\n\n"), false);
                break;
            case 6:
-               oled_write_P(PSTR("SYM\n\n\n\n"), false);
+               oled_write_P(PSTR("NUM\n\n\n\n"), false);
                break;
            case 7:
+               oled_write_P(PSTR("SYM\n\n\n\n"), false);
+               break;
+           case 8:
                oled_write_P(PSTR("FUNCTION\n\n\n\n"), false);
                break;
            default:
