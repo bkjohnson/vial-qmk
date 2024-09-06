@@ -47,14 +47,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |   Z  |   X  |   C  |   D  |   V  |  |     |    |     |  |   K  |   H  |   ,  |   .  |   /  |
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
  *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
- *          |     |   | ESC | SPACE | TAB  |            |  ENTER  | BS | DEL |   |     |
+ *          |     |   | ESC | SPACE | TAB  |            |  BS | ENTER  | DEL |   |     |
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
 [_BASE] = LAYOUT(
 	KC_Q,				KC_W,				KC_F,				KC_P,				KC_B,			KC_J,	KC_L,				KC_U,				KC_Y,				KC_QUOT,
 	MT(MOD_LGUI, KC_A),	MT(MOD_LALT, KC_R),	MT(MOD_LCTL, KC_S),	MT(MOD_LSFT, KC_T),	KC_G,			KC_M,	MT(MOD_LSFT, KC_N),	MT(MOD_LCTL, KC_E),	MT(MOD_LALT, KC_I),	MT(MOD_LGUI, KC_O),
 	KC_Z,				KC_X,				KC_C,				KC_D,				KC_V,			KC_K,	KC_H,				KC_COMM,			KC_DOT,				KC_SLSH,
-	KC_NO,				LT(_MEDIA, KC_ESC),	LT(_NAV, KC_SPC),	LT(_MOUSE, KC_TAB),	KC_NO,  		KC_NUM,	LT(_SYM, KC_ENT),	LT(_NUM, KC_BSPC),	LT(_FUNC, KC_DEL),	KC_NO
+	KC_NO,				LT(_MEDIA, KC_ESC),	LT(_NAV, KC_SPC),	LT(_MOUSE, KC_TAB),	KC_NO,  		KC_NUM,	LT(_SYM, KC_BSPC),	LT(_NUM, KC_ENT),	LT(_FUNC, KC_DEL),	KC_NO
 ),
 
 /* EXTRA
