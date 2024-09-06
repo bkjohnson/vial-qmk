@@ -32,6 +32,7 @@ enum layer_names {
 
 enum custom_keycodes {
   LLOCK = QK_KB_0,
+  MACRO_SETUP_EDITOR,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -222,6 +223,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   if (!process_layer_lock(keycode, record, LLOCK)) { return false; }
   // Your macros ...
+  switch (keycode) {
+    case MACRO_SETUP_EDITOR:
+      if (record->event.pressed) {
+        SEND_STRING("nvim .\n");
+        SEND_STRING(":Lazy\n");
+        SEND_STRING(":source Session.vim");
+      }
+      break;
+  }
 
   return true;
 }

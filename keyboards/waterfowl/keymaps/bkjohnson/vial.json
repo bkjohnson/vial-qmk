@@ -12,6 +12,11 @@
             "name": "Lock",
             "title": "Layer Lock",
             "shortName": "LLOCK"
+        },
+        {
+            "name": "Setup Editor",
+            "title": "Setup Vim",
+            "shortName": "MACRO_SETUP_EDITOR"
         }
     ],
     "layouts": {
