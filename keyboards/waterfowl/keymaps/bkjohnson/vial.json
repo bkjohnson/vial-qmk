@@ -17,6 +17,11 @@
             "name": "Setup Editor",
             "title": "Setup Vim",
             "shortName": "MACRO_SETUP_EDITOR"
+        },
+        {
+            "name": "React with thumbs up",
+            "title": "React with thumbs up",
+            "shortName": "MACRO_THUMBS_UP"
         }
     ],
     "layouts": {

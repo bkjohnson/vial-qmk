@@ -33,6 +33,7 @@ enum layer_names {
 enum custom_keycodes {
   LLOCK = QK_KB_0,
   MACRO_SETUP_EDITOR,
+  MACRO_THUMBS_UP,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -126,7 +127,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------|                      |------+------+------+------+------|
  * | SUPR | ALT  | CTRL | SHIFT|      |                      |      |SHIFT | CTRL | ALT  | SUPR |
  * |------+------+------+------+------|  ,-----.    ,-----.  |------+------+------+------+------|
- * | Reset|      |      |      |      |  |     |    |     |  | REDO | PASTE| COPY | CUT  | UNDO |
+ * | Reset|      |      |      | +1   |  |     |    |     |  | REDO | PASTE| COPY | CUT  | UNDO |
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
  *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
  *          |     |   | MID | LEFT | RIGHT |            | RIGHT | LEFT | MID |   |     |
@@ -135,7 +136,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BUTTON] =  LAYOUT(
 	C(KC_Z),C(KC_X),	C(KC_C),	C(KC_V),    C(KC_Y),	C(KC_Y),C(KC_V),    C(KC_C),    C(KC_X),    C(KC_Z),
 	KC_LGUI,KC_LALT,	KC_LCTL,	KC_LSFT,    KC_NO,		KC_NO,	KC_RSFT,    KC_RCTL,	KC_RALT,	KC_RGUI,
-	C(KC_Z),C(KC_X),	C(KC_C),	C(KC_V),    C(KC_Y),    C(KC_Y),C(KC_V),    C(KC_C),    C(KC_X),    C(KC_Z),
+	C(KC_Z),C(KC_X),	C(KC_C),	C(KC_V),    MACRO_THUMBS_UP,    C(KC_Y),C(KC_V),    C(KC_C),    C(KC_X),    C(KC_Z),
 	KC_NO,  KC_MS_BTN3,	KC_MS_BTN1,	KC_MS_BTN2, KC_NO,	    KC_NO,	KC_MS_BTN2,	KC_MS_BTN1,	KC_MS_BTN3, KC_NO
 ),
 
@@ -229,6 +230,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
         SEND_STRING("nvim .\n");
         SEND_STRING(":Lazy\n");
         SEND_STRING(":source Session.vim");
+      }
+      break;
+    case MACRO_THUMBS_UP:
+      if (record->event.pressed) {
+        SEND_STRING("+:+1:\n");
       }
       break;
   }
