@@ -244,13 +244,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-    [_BASE] =   { ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)  },
-    [_NAV] =    { ENCODER_CCW_CW(UG_HUED, UG_HUEU),           ENCODER_CCW_CW(UG_SATD, UG_SATU)  },
-    [_MOUSE] =  { ENCODER_CCW_CW(UG_VALD, UG_VALU),           ENCODER_CCW_CW(UG_SPDD, UG_SPDU)  },
-    [_BUTTON] = { ENCODER_CCW_CW(UG_PREV, UG_NEXT),           ENCODER_CCW_CW(KC_RIGHT, KC_LEFT) },
-    [_MEDIA] =  { ENCODER_CCW_CW(UG_PREV, UG_NEXT),           ENCODER_CCW_CW(KC_RIGHT, KC_LEFT),    ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
-    [_NUM] =    { ENCODER_CCW_CW(UG_PREV, UG_NEXT),           ENCODER_CCW_CW(KC_RIGHT, KC_LEFT) },
-    [_SYM] =    { ENCODER_CCW_CW(UG_PREV, UG_NEXT),           ENCODER_CCW_CW(KC_RIGHT, KC_LEFT) },
-    [_FUNC] =   { ENCODER_CCW_CW(UG_PREV, UG_NEXT),           ENCODER_CCW_CW(KC_RIGHT, KC_LEFT) },
+    [_BASE] =   { ENCODER_CCW_CW(G(KC_TAB), RSG(KC_TAB)), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)  },
+    [_EXTRA] =  { ENCODER_CCW_CW(G(KC_TAB), RSG(KC_TAB)), ENCODER_CCW_CW(KC_VOLD, KC_VOLU)  },
+    [_NAV] =    { },
+    [_MOUSE] =  { ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(KC_MS_WH_LEFT, KC_MS_WH_RIGHT), ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN) },
+    [_BUTTON] = { },
+    [_MEDIA] =  { ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(KC_LEFT, KC_RIGHT), ENCODER_CCW_CW(KC_VOLU, KC_VOLD) },
+    [_NUM] =    { },
+    [_SYM] =    { },
+    [_FUNC] =   { },
 };
 #endif
